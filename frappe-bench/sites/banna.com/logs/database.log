@@ -891,3 +891,27 @@ index modified(modified))
 			ROW_FORMAT=DYNAMIC
 			CHARACTER SET=utf8mb4
 			COLLATE=utf8mb4_unicode_ci
+2024-01-29 15:42:56,432 WARNING database DDL Query made to DB:
+create table `tabFigma` (
+			name varchar(140) primary key,
+			creation datetime(6),
+			modified datetime(6),
+			modified_by varchar(140),
+			owner varchar(140),
+			docstatus int(1) not null default '0',
+			idx int(8) not null default '0',
+			`_user_tags` text,
+`_comments` text,
+`_assign` text,
+`_liked_by` text,
+index modified(modified))
+			ENGINE=InnoDB
+			ROW_FORMAT=DYNAMIC
+			CHARACTER SET=utf8mb4
+			COLLATE=utf8mb4_unicode_ci
+2024-01-29 15:51:42,542 WARNING database DDL Query made to DB:
+ALTER TABLE `tabFigma` ADD COLUMN `figma_url` text, ADD COLUMN `attach_euhe` text
+2024-01-29 18:55:32,725 WARNING database DDL Query made to DB:
+ALTER TABLE `tabFigma` ADD COLUMN `workflow_state` varchar(140)
+2024-01-29 19:01:32,626 WARNING database DDL Query made to DB:
+ALTER TABLE `tabFigma` ADD COLUMN `multiselect` varchar(140)

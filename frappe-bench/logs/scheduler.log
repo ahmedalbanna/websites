@@ -1,0 +1,192 @@
+2024-01-29 18:14:53,942 ERROR scheduler Exception in Enqueue Events for Site banna.com
+Traceback (most recent call last):
+  File "/workspaces/websites/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 644, in connect
+    sock = socket.create_connection(
+  File "/home/codespace/.python/current/lib/python3.10/socket.py", line 845, in create_connection
+    raise err
+  File "/home/codespace/.python/current/lib/python3.10/socket.py", line 833, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/workspaces/websites/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 79, in enqueue_events_for_site
+    frappe.init(site=site)
+  File "/workspaces/websites/frappe-bench/apps/frappe/frappe/__init__.py", line 281, in init
+    setup_module_map(site_ready)
+  File "/workspaces/websites/frappe-bench/apps/frappe/frappe/__init__.py", line 1667, in setup_module_map
+    apps = get_installed_apps(_ensure_on_bench=True)
+  File "/workspaces/websites/frappe-bench/apps/frappe/frappe/utils/caching.py", line 47, in wrapper
+    return func(*args, **kwargs)
+  File "/workspaces/websites/frappe-bench/apps/frappe/frappe/__init__.py", line 1556, in get_installed_apps
+    installed = json.loads(db.get_global("installed_apps") or "[]")
+  File "/workspaces/websites/frappe-bench/apps/frappe/frappe/database/database.py", line 981, in get_global
+    return self.get_default(key, user)
+  File "/workspaces/websites/frappe-bench/apps/frappe/frappe/database/database.py", line 985, in get_default
+    d = self.get_defaults(key, parent)
+  File "/workspaces/websites/frappe-bench/apps/frappe/frappe/database/database.py", line 1001, in get_defaults
+    defaults = frappe.defaults.get_defaults_for(parent)
+  File "/workspaces/websites/frappe-bench/apps/frappe/frappe/defaults.py", line 236, in get_defaults_for
+    frappe.qb.from_(table)
+  File "/workspaces/websites/frappe-bench/apps/frappe/frappe/query_builder/utils.py", line 84, in execute_query
+    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
+  File "/workspaces/websites/frappe-bench/apps/frappe/frappe/database/database.py", line 202, in sql
+    self.connect()
+  File "/workspaces/websites/frappe-bench/apps/frappe/frappe/database/database.py", line 107, in connect
+    self._conn: Union["MariadbConnection", "PostgresConnection"] = self.get_connection()
+  File "/workspaces/websites/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 103, in get_connection
+    conn = self._get_connection()
+  File "/workspaces/websites/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 109, in _get_connection
+    return self.create_connection()
+  File "/workspaces/websites/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 112, in create_connection
+    return pymysql.connect(**self.get_connection_settings())
+  File "/workspaces/websites/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 358, in __init__
+    self.connect()
+  File "/workspaces/websites/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 711, in connect
+    raise exc
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+2024-01-29 18:15:54,042 ERROR scheduler Exception in Enqueue Events for Site banna.com
+Traceback (most recent call last):
+  File "/workspaces/websites/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 644, in connect
+    sock = socket.create_connection(
+  File "/home/codespace/.python/current/lib/python3.10/socket.py", line 845, in create_connection
+    raise err
+  File "/home/codespace/.python/current/lib/python3.10/socket.py", line 833, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/workspaces/websites/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 79, in enqueue_events_for_site
+    frappe.init(site=site)
+  File "/workspaces/websites/frappe-bench/apps/frappe/frappe/__init__.py", line 281, in init
+    setup_module_map(site_ready)
+  File "/workspaces/websites/frappe-bench/apps/frappe/frappe/__init__.py", line 1667, in setup_module_map
+    apps = get_installed_apps(_ensure_on_bench=True)
+  File "/workspaces/websites/frappe-bench/apps/frappe/frappe/utils/caching.py", line 47, in wrapper
+    return func(*args, **kwargs)
+  File "/workspaces/websites/frappe-bench/apps/frappe/frappe/__init__.py", line 1556, in get_installed_apps
+    installed = json.loads(db.get_global("installed_apps") or "[]")
+  File "/workspaces/websites/frappe-bench/apps/frappe/frappe/database/database.py", line 981, in get_global
+    return self.get_default(key, user)
+  File "/workspaces/websites/frappe-bench/apps/frappe/frappe/database/database.py", line 985, in get_default
+    d = self.get_defaults(key, parent)
+  File "/workspaces/websites/frappe-bench/apps/frappe/frappe/database/database.py", line 1001, in get_defaults
+    defaults = frappe.defaults.get_defaults_for(parent)
+  File "/workspaces/websites/frappe-bench/apps/frappe/frappe/defaults.py", line 236, in get_defaults_for
+    frappe.qb.from_(table)
+  File "/workspaces/websites/frappe-bench/apps/frappe/frappe/query_builder/utils.py", line 84, in execute_query
+    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
+  File "/workspaces/websites/frappe-bench/apps/frappe/frappe/database/database.py", line 202, in sql
+    self.connect()
+  File "/workspaces/websites/frappe-bench/apps/frappe/frappe/database/database.py", line 107, in connect
+    self._conn: Union["MariadbConnection", "PostgresConnection"] = self.get_connection()
+  File "/workspaces/websites/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 103, in get_connection
+    conn = self._get_connection()
+  File "/workspaces/websites/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 109, in _get_connection
+    return self.create_connection()
+  File "/workspaces/websites/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 112, in create_connection
+    return pymysql.connect(**self.get_connection_settings())
+  File "/workspaces/websites/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 358, in __init__
+    self.connect()
+  File "/workspaces/websites/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 711, in connect
+    raise exc
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+2024-01-29 18:16:54,107 ERROR scheduler Exception in Enqueue Events for Site banna.com
+Traceback (most recent call last):
+  File "/workspaces/websites/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 644, in connect
+    sock = socket.create_connection(
+  File "/home/codespace/.python/current/lib/python3.10/socket.py", line 845, in create_connection
+    raise err
+  File "/home/codespace/.python/current/lib/python3.10/socket.py", line 833, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/workspaces/websites/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 79, in enqueue_events_for_site
+    frappe.init(site=site)
+  File "/workspaces/websites/frappe-bench/apps/frappe/frappe/__init__.py", line 281, in init
+    setup_module_map(site_ready)
+  File "/workspaces/websites/frappe-bench/apps/frappe/frappe/__init__.py", line 1667, in setup_module_map
+    apps = get_installed_apps(_ensure_on_bench=True)
+  File "/workspaces/websites/frappe-bench/apps/frappe/frappe/utils/caching.py", line 47, in wrapper
+    return func(*args, **kwargs)
+  File "/workspaces/websites/frappe-bench/apps/frappe/frappe/__init__.py", line 1556, in get_installed_apps
+    installed = json.loads(db.get_global("installed_apps") or "[]")
+  File "/workspaces/websites/frappe-bench/apps/frappe/frappe/database/database.py", line 981, in get_global
+    return self.get_default(key, user)
+  File "/workspaces/websites/frappe-bench/apps/frappe/frappe/database/database.py", line 985, in get_default
+    d = self.get_defaults(key, parent)
+  File "/workspaces/websites/frappe-bench/apps/frappe/frappe/database/database.py", line 1001, in get_defaults
+    defaults = frappe.defaults.get_defaults_for(parent)
+  File "/workspaces/websites/frappe-bench/apps/frappe/frappe/defaults.py", line 236, in get_defaults_for
+    frappe.qb.from_(table)
+  File "/workspaces/websites/frappe-bench/apps/frappe/frappe/query_builder/utils.py", line 84, in execute_query
+    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
+  File "/workspaces/websites/frappe-bench/apps/frappe/frappe/database/database.py", line 202, in sql
+    self.connect()
+  File "/workspaces/websites/frappe-bench/apps/frappe/frappe/database/database.py", line 107, in connect
+    self._conn: Union["MariadbConnection", "PostgresConnection"] = self.get_connection()
+  File "/workspaces/websites/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 103, in get_connection
+    conn = self._get_connection()
+  File "/workspaces/websites/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 109, in _get_connection
+    return self.create_connection()
+  File "/workspaces/websites/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 112, in create_connection
+    return pymysql.connect(**self.get_connection_settings())
+  File "/workspaces/websites/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 358, in __init__
+    self.connect()
+  File "/workspaces/websites/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 711, in connect
+    raise exc
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+2024-01-29 18:17:54,207 ERROR scheduler Exception in Enqueue Events for Site banna.com
+Traceback (most recent call last):
+  File "/workspaces/websites/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 644, in connect
+    sock = socket.create_connection(
+  File "/home/codespace/.python/current/lib/python3.10/socket.py", line 845, in create_connection
+    raise err
+  File "/home/codespace/.python/current/lib/python3.10/socket.py", line 833, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/workspaces/websites/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 79, in enqueue_events_for_site
+    frappe.init(site=site)
+  File "/workspaces/websites/frappe-bench/apps/frappe/frappe/__init__.py", line 281, in init
+    setup_module_map(site_ready)
+  File "/workspaces/websites/frappe-bench/apps/frappe/frappe/__init__.py", line 1667, in setup_module_map
+    apps = get_installed_apps(_ensure_on_bench=True)
+  File "/workspaces/websites/frappe-bench/apps/frappe/frappe/utils/caching.py", line 47, in wrapper
+    return func(*args, **kwargs)
+  File "/workspaces/websites/frappe-bench/apps/frappe/frappe/__init__.py", line 1556, in get_installed_apps
+    installed = json.loads(db.get_global("installed_apps") or "[]")
+  File "/workspaces/websites/frappe-bench/apps/frappe/frappe/database/database.py", line 981, in get_global
+    return self.get_default(key, user)
+  File "/workspaces/websites/frappe-bench/apps/frappe/frappe/database/database.py", line 985, in get_default
+    d = self.get_defaults(key, parent)
+  File "/workspaces/websites/frappe-bench/apps/frappe/frappe/database/database.py", line 1001, in get_defaults
+    defaults = frappe.defaults.get_defaults_for(parent)
+  File "/workspaces/websites/frappe-bench/apps/frappe/frappe/defaults.py", line 236, in get_defaults_for
+    frappe.qb.from_(table)
+  File "/workspaces/websites/frappe-bench/apps/frappe/frappe/query_builder/utils.py", line 84, in execute_query
+    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
+  File "/workspaces/websites/frappe-bench/apps/frappe/frappe/database/database.py", line 202, in sql
+    self.connect()
+  File "/workspaces/websites/frappe-bench/apps/frappe/frappe/database/database.py", line 107, in connect
+    self._conn: Union["MariadbConnection", "PostgresConnection"] = self.get_connection()
+  File "/workspaces/websites/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 103, in get_connection
+    conn = self._get_connection()
+  File "/workspaces/websites/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 109, in _get_connection
+    return self.create_connection()
+  File "/workspaces/websites/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 112, in create_connection
+    return pymysql.connect(**self.get_connection_settings())
+  File "/workspaces/websites/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 358, in __init__
+    self.connect()
+  File "/workspaces/websites/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 711, in connect
+    raise exc
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
