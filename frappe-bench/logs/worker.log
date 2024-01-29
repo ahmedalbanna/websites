@@ -1,0 +1,115 @@
+2024-01-29 14:17:14,526 Worker rq:worker:7c057c29d71d4595a3cec05bc8c16623 started with PID 67098, version 1.15.1
+2024-01-29 14:17:14,526 Subscribing to channel rq:pubsub:7c057c29d71d4595a3cec05bc8c16623
+2024-01-29 14:17:14,527 *** Listening on workspaces-websites-frappe-bench:short, workspaces-websites-frappe-bench:default, workspaces-websites-frappe-bench:long...
+2024-01-29 14:17:14,528 Cleaning registries for queue: workspaces-websites-frappe-bench:short
+2024-01-29 14:17:14,529 Cleaning registries for queue: workspaces-websites-frappe-bench:default
+2024-01-29 14:17:14,530 Cleaning registries for queue: workspaces-websites-frappe-bench:long
+2024-01-29 14:19:35,123 Worker 7c057c29d71d4595a3cec05bc8c16623 [PID 67098]: warm shut down requested
+2024-01-29 14:19:35,125 Unsubscribing from channel rq:pubsub:7c057c29d71d4595a3cec05bc8c16623
+2024-01-29 14:19:39,496 Worker rq:worker:4c2e252ad52c4c6e97b59d374a094e77 started with PID 68988, version 1.15.1
+2024-01-29 14:19:39,496 Subscribing to channel rq:pubsub:4c2e252ad52c4c6e97b59d374a094e77
+2024-01-29 14:19:39,515 *** Listening on workspaces-websites-frappe-bench:short, workspaces-websites-frappe-bench:default, workspaces-websites-frappe-bench:long...
+2024-01-29 14:19:39,516 Cleaning registries for queue: workspaces-websites-frappe-bench:short
+2024-01-29 14:19:39,517 Cleaning registries for queue: workspaces-websites-frappe-bench:default
+2024-01-29 14:19:39,519 Cleaning registries for queue: workspaces-websites-frappe-bench:long
+2024-01-29 14:29:07,395 Worker 4c2e252ad52c4c6e97b59d374a094e77 [PID 68988]: warm shut down requested
+2024-01-29 14:29:07,400 Unsubscribing from channel rq:pubsub:4c2e252ad52c4c6e97b59d374a094e77
+2024-01-29 14:29:13,399 Worker rq:worker:7dddc55b0a0e4ca3b36c6bedaadff954 started with PID 77763, version 1.15.1
+2024-01-29 14:29:13,400 Subscribing to channel rq:pubsub:7dddc55b0a0e4ca3b36c6bedaadff954
+2024-01-29 14:29:13,401 *** Listening on workspaces-websites-frappe-bench:short, workspaces-websites-frappe-bench:default, workspaces-websites-frappe-bench:long...
+2024-01-29 14:29:13,402 Cleaning registries for queue: workspaces-websites-frappe-bench:short
+2024-01-29 14:29:13,403 Cleaning registries for queue: workspaces-websites-frappe-bench:default
+2024-01-29 14:29:13,404 Cleaning registries for queue: workspaces-websites-frappe-bench:long
+2024-01-29 14:32:14,329 workspaces-websites-frappe-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.user.user.create_contact', kwargs={'user': <User: ahmedalbanna966@gmail.com>, 'ignore_mandatory': True}, method='frappe.core.doctype.user.user.create_contact', site='banna.com', user='Administrator') (banna.com::3e8d5c30-e5cd-4ad0-b24f-731f873454d9)
+2024-01-29 14:32:15,772 workspaces-websites-frappe-bench:default: Job OK (banna.com::3e8d5c30-e5cd-4ad0-b24f-731f873454d9)
+2024-01-29 14:32:15,772 Result is kept for 600 seconds
+2024-01-29 14:32:15,781 workspaces-websites-frappe-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='<function setup_demo_data at 0x7fef86947a30>', kwargs={}, method=<function setup_demo_data at 0x7fef86947a30>, site='banna.com', user='ahmedalbanna966@gmail.com') (banna.com::4855fbca-63a2-481f-9ce0-f0198c395981)
+Traceback (most recent call last):
+  File "apps/frappe/frappe/utils/background_jobs.py", line 221, in execute_job
+    retval = method(**kwargs)
+  File "apps/erpnext/erpnext/setup/demo.py", line 26, in setup_demo_data
+    make_transactions(company)
+  File "apps/erpnext/erpnext/setup/demo.py", line 104, in make_transactions
+    create_transaction(item, company, start_date)
+  File "apps/erpnext/erpnext/setup/demo.py", line 131, in create_transaction
+    doc.save(ignore_permissions=True)
+  File "apps/frappe/frappe/model/document.py", line 334, in save
+    return self._save(*args, **kwargs)
+  File "apps/frappe/frappe/model/document.py", line 356, in _save
+    return self.insert()
+  File "apps/frappe/frappe/model/document.py", line 286, in insert
+    self.run_before_save_methods()
+  File "apps/frappe/frappe/model/document.py", line 1085, in run_before_save_methods
+    self.run_method("validate")
+  File "apps/frappe/frappe/model/document.py", line 954, in run_method
+    out = Document.hook(fn)(self, *args, **kwargs)
+  File "apps/frappe/frappe/model/document.py", line 1320, in composer
+    return composed(self, method, *args, **kwargs)
+  File "apps/frappe/frappe/model/document.py", line 1302, in runner
+    add_to_return_value(self, fn(self, *args, **kwargs))
+  File "apps/frappe/frappe/model/document.py", line 951, in fn
+    return method_object(*args, **kwargs)
+  File "apps/erpnext/erpnext/buying/doctype/purchase_order/purchase_order.py", line 192, in validate
+    super(PurchaseOrder, self).validate()
+  File "apps/erpnext/erpnext/controllers/buying_controller.py", line 31, in validate
+    super(BuyingController, self).validate()
+  File "apps/erpnext/erpnext/controllers/subcontracting_controller.py", line 56, in validate
+    super(SubcontractingController, self).validate()
+  File "apps/erpnext/erpnext/controllers/stock_controller.py", line 45, in validate
+    super(StockController, self).validate()
+  File "apps/erpnext/erpnext/controllers/accounts_controller.py", line 171, in validate
+    self.set_missing_values(for_validate=True)
+  File "apps/erpnext/erpnext/controllers/buying_controller.py", line 139, in set_missing_values
+    get_party_details(
+  File "apps/frappe/frappe/utils/typing_validations.py", line 31, in wrapper
+    return func(*args, **kwargs)
+  File "apps/erpnext/erpnext/accounts/party.py", line 77, in get_party_details
+    return _get_party_details(
+  File "apps/erpnext/erpnext/accounts/party.py", line 136, in _get_party_details
+    set_contact_details(party_details, party, party_type)
+  File "apps/erpnext/erpnext/accounts/party.py", line 286, in set_contact_details
+    party_details.contact_person = get_default_contact(party_type, party.name)
+  File "apps/erpnext/erpnext/accounts/party.py", line 998, in get_default_contact
+    contacts = frappe.get_all(
+  File "apps/frappe/frappe/__init__.py", line 2033, in get_all
+    return get_list(doctype, *args, **kwargs)
+  File "apps/frappe/frappe/__init__.py", line 2008, in get_list
+    return frappe.model.db_query.DatabaseQuery(doctype).execute(*args, **kwargs)
+  File "apps/frappe/frappe/model/db_query.py", line 202, in execute
+    result = self.build_and_run()
+  File "apps/frappe/frappe/model/db_query.py", line 242, in build_and_run
+    return frappe.db.sql(
+  File "apps/frappe/frappe/database/database.py", line 225, in sql
+    self._cursor.execute(query, values)
+  File "env/lib/python3.10/site-packages/pymysql/cursors.py", line 153, in execute
+    result = self._query(query)
+  File "env/lib/python3.10/site-packages/pymysql/cursors.py", line 322, in _query
+    conn.query(q)
+  File "env/lib/python3.10/site-packages/pymysql/connections.py", line 558, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "env/lib/python3.10/site-packages/pymysql/connections.py", line 822, in _read_query_result
+    result.read()
+  File "env/lib/python3.10/site-packages/pymysql/connections.py", line 1200, in read
+    first_packet = self.connection._read_packet()
+  File "env/lib/python3.10/site-packages/pymysql/connections.py", line 772, in _read_packet
+    packet.raise_for_error()
+  File "env/lib/python3.10/site-packages/pymysql/protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "env/lib/python3.10/site-packages/pymysql/err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1054, "Unknown column 'tabContact.is_billing_contact' in 'where clause'")
+
+2024-01-29 14:32:21,925 workspaces-websites-frappe-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.user.user.update_gravatar', kwargs={'name': 'ahmedalbanna966@gmail.com'}, method='frappe.core.doctype.user.user.update_gravatar', site='banna.com', user='Administrator') (banna.com::764ec6e7-2d3f-4d4a-aa5e-30ea53bbe8e3)
+2024-01-29 14:32:22,232 workspaces-websites-frappe-bench:default: Job OK (banna.com::764ec6e7-2d3f-4d4a-aa5e-30ea53bbe8e3)
+2024-01-29 14:32:22,232 Result is kept for 600 seconds
+2024-01-29 14:34:18,974 workspaces-websites-frappe-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.user.user.create_contact', kwargs={'user': <User: ahmedalbanna966@gmail.com>, 'ignore_mandatory': True}, method='frappe.core.doctype.user.user.create_contact', site='banna.com', user='ahmedalbanna966@gmail.com') (banna.com::e4dafe68-74b2-436c-b6ab-e9d0bf889030)
+2024-01-29 14:34:19,510 workspaces-websites-frappe-bench:default: Job OK (banna.com::e4dafe68-74b2-436c-b6ab-e9d0bf889030)
+2024-01-29 14:34:19,510 Result is kept for 600 seconds
+2024-01-29 14:41:04,775 Worker 7dddc55b0a0e4ca3b36c6bedaadff954 [PID 77763]: warm shut down requested
+2024-01-29 14:41:04,783 Unsubscribing from channel rq:pubsub:7dddc55b0a0e4ca3b36c6bedaadff954
+2024-01-29 14:41:09,556 Worker rq:worker:bc27952fbcbb4980b8a903e5eb055a45 started with PID 87182, version 1.15.1
+2024-01-29 14:41:09,556 Subscribing to channel rq:pubsub:bc27952fbcbb4980b8a903e5eb055a45
+2024-01-29 14:41:09,557 *** Listening on workspaces-websites-frappe-bench:short, workspaces-websites-frappe-bench:default, workspaces-websites-frappe-bench:long...
+2024-01-29 14:41:09,558 Cleaning registries for queue: workspaces-websites-frappe-bench:short
+2024-01-29 14:41:09,559 Cleaning registries for queue: workspaces-websites-frappe-bench:default
+2024-01-29 14:41:09,560 Cleaning registries for queue: workspaces-websites-frappe-bench:long

@@ -1,0 +1,53 @@
+2024-01-29 13:42:55,564 DEBUG cd frappe-bench && python3 -m venv env
+2024-01-29 13:42:59,224 DEBUG cd frappe-bench && /workspaces/websites/frappe-bench/env/bin/python -m pip install --quiet --upgrade pip
+2024-01-29 13:43:02,142 DEBUG cd frappe-bench && /workspaces/websites/frappe-bench/env/bin/python -m pip install --quiet wheel
+2024-01-29 13:43:03,615 LOG Getting frappe
+2024-01-29 13:43:03,615 DEBUG cd frappe-bench/apps && git clone https://github.com/frappe/frappe.git  --depth 1 --origin upstream
+2024-01-29 13:43:05,882 LOG Installing frappe
+2024-01-29 13:43:05,883 DEBUG cd /workspaces/websites/frappe-bench && /workspaces/websites/frappe-bench/env/bin/python -m pip install --quiet --upgrade -e /workspaces/websites/frappe-bench/apps/frappe 
+2024-01-29 13:44:26,064 DEBUG cd /workspaces/websites/frappe-bench/apps/frappe && yarn install
+2024-01-29 13:44:48,950 DEBUG cd /workspaces/websites/frappe-bench && supervisorctl restart frappe:
+2024-01-29 13:44:49,081 WARNING cd /workspaces/websites/frappe-bench && supervisorctl restart frappe: executed with exit code 7
+2024-01-29 13:44:49,081 WARNING restarting supervisor group `frappe:` failed. Use `bench restart` to retry.
+2024-01-29 13:44:49,081 DEBUG cd frappe-bench && bench build
+2024-01-29 13:44:49,197 INFO /home/codespace/.python/current/bin/bench build
+2024-01-29 13:45:06,893 LOG setting up backups
+2024-01-29 13:45:06,915 LOG backups were set up
+2024-01-29 13:45:06,915 INFO Bench frappe-bench initialized
+2024-01-29 13:45:28,471 INFO /home/codespace/.python/current/bin/bench get-app erpnext https://github.com/frappe/erpnext
+2024-01-29 13:45:28,479 LOG Getting erpnext
+2024-01-29 13:45:28,479 DEBUG cd ./apps && git clone https://github.com/frappe/erpnext  --depth 1 --origin upstream
+2024-01-29 13:45:31,091 LOG Installing erpnext
+2024-01-29 13:45:31,261 DEBUG cd /workspaces/websites/frappe-bench && /workspaces/websites/frappe-bench/env/bin/python -m pip install --quiet --upgrade -e /workspaces/websites/frappe-bench/apps/erpnext 
+2024-01-29 13:45:48,735 DEBUG cd /workspaces/websites/frappe-bench/apps/erpnext && yarn install
+2024-01-29 13:45:49,219 DEBUG bench build --app erpnext
+2024-01-29 13:45:49,349 INFO /home/codespace/.python/current/bin/bench build --app erpnext
+2024-01-29 13:45:56,204 DEBUG cd /workspaces/websites/frappe-bench && supervisorctl restart frappe:
+2024-01-29 13:45:56,329 WARNING cd /workspaces/websites/frappe-bench && supervisorctl restart frappe: executed with exit code 7
+2024-01-29 13:45:56,329 WARNING restarting supervisor group `frappe:` failed. Use `bench restart` to retry.
+2024-01-29 14:10:03,312 INFO /home/codespace/.python/current/bin/bench new-site banna.com --db-name erpnext --mariadb-root-username root --mariadb-root-password admin --install-app erpnext --verbose --force
+2024-01-29 14:17:11,489 INFO /home/codespace/.python/current/bin/bench start
+2024-01-29 14:17:13,185 INFO /home/codespace/.python/current/bin/bench serve --port 8000
+2024-01-29 14:17:13,196 INFO /home/codespace/.python/current/bin/bench schedule
+2024-01-29 14:17:13,211 INFO /home/codespace/.python/current/bin/bench watch
+2024-01-29 14:17:13,250 INFO /home/codespace/.python/current/bin/bench worker
+2024-01-29 14:18:36,662 INFO /home/codespace/.python/current/bin/bench config dns_multitenant on
+2024-01-29 14:19:12,634 INFO /home/codespace/.python/current/bin/bench use banna.com
+2024-01-29 14:19:37,506 INFO /home/codespace/.python/current/bin/bench start
+2024-01-29 14:19:37,977 INFO /home/codespace/.python/current/bin/bench serve --port 8000
+2024-01-29 14:19:37,981 INFO /home/codespace/.python/current/bin/bench watch
+2024-01-29 14:19:38,008 INFO /home/codespace/.python/current/bin/bench worker
+2024-01-29 14:19:38,065 INFO /home/codespace/.python/current/bin/bench schedule
+2024-01-29 14:29:11,653 INFO /home/codespace/.python/current/bin/bench start
+2024-01-29 14:29:12,023 INFO /home/codespace/.python/current/bin/bench serve --port 8000
+2024-01-29 14:29:12,037 INFO /home/codespace/.python/current/bin/bench worker
+2024-01-29 14:29:12,059 INFO /home/codespace/.python/current/bin/bench watch
+2024-01-29 14:29:12,137 INFO /home/codespace/.python/current/bin/bench schedule
+2024-01-29 14:38:52,946 INFO /home/codespace/.python/current/bin/bench setup procfile
+2024-01-29 14:41:07,633 INFO /home/codespace/.python/current/bin/bench start
+2024-01-29 14:41:08,006 INFO /home/codespace/.python/current/bin/bench watch
+2024-01-29 14:41:08,011 INFO /home/codespace/.python/current/bin/bench schedule
+2024-01-29 14:41:08,145 INFO /home/codespace/.python/current/bin/bench serve --port 8000
+2024-01-29 14:41:08,185 INFO /home/codespace/.python/current/bin/bench worker
+2024-01-29 14:44:20,092 INFO /home/codespace/.python/current/bin/bench setup nginx
+2024-01-29 14:44:54,539 INFO /home/codespace/.python/current/bin/bench setup supervisor
