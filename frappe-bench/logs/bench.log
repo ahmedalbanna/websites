@@ -51,3 +51,19 @@
 2024-01-29 14:41:08,185 INFO /home/codespace/.python/current/bin/bench worker
 2024-01-29 14:44:20,092 INFO /home/codespace/.python/current/bin/bench setup nginx
 2024-01-29 14:44:54,539 INFO /home/codespace/.python/current/bin/bench setup supervisor
+2024-01-29 14:50:13,696 INFO /home/codespace/.python/current/bin/bench new-app demo
+2024-01-29 14:50:13,701 LOG creating new app demo
+2024-01-29 14:51:13,314 LOG Installing demo
+2024-01-29 14:51:13,315 DEBUG cd /workspaces/websites/frappe-bench && /workspaces/websites/frappe-bench/env/bin/python -m pip install --quiet --upgrade -e /workspaces/websites/frappe-bench/apps/demo 
+2024-01-29 14:51:16,223 DEBUG bench build --app demo
+2024-01-29 14:51:16,339 INFO /home/codespace/.python/current/bin/bench build --app demo
+2024-01-29 14:51:18,373 DEBUG cd /workspaces/websites/frappe-bench && supervisorctl restart frappe:
+2024-01-29 14:51:18,500 WARNING cd /workspaces/websites/frappe-bench && supervisorctl restart frappe: executed with exit code 7
+2024-01-29 14:51:18,500 WARNING restarting supervisor group `frappe:` failed. Use `bench restart` to retry.
+2024-01-29 14:51:51,876 INFO /home/codespace/.python/current/bin/bench install-app --help
+2024-01-29 14:53:27,192 INFO /home/codespace/.python/current/bin/bench --site banna.com install-app demo
+2024-01-29 14:54:00,377 INFO /home/codespace/.python/current/bin/bench start
+2024-01-29 14:54:00,774 INFO /home/codespace/.python/current/bin/bench schedule
+2024-01-29 14:54:00,836 INFO /home/codespace/.python/current/bin/bench serve --port 8000
+2024-01-29 14:54:00,924 INFO /home/codespace/.python/current/bin/bench watch
+2024-01-29 14:54:00,943 INFO /home/codespace/.python/current/bin/bench worker

@@ -113,3 +113,11 @@ pymysql.err.OperationalError: (1054, "Unknown column 'tabContact.is_billing_cont
 2024-01-29 14:41:09,558 Cleaning registries for queue: workspaces-websites-frappe-bench:short
 2024-01-29 14:41:09,559 Cleaning registries for queue: workspaces-websites-frappe-bench:default
 2024-01-29 14:41:09,560 Cleaning registries for queue: workspaces-websites-frappe-bench:long
+2024-01-29 14:53:57,762 Worker bc27952fbcbb4980b8a903e5eb055a45 [PID 87182]: warm shut down requested
+2024-01-29 14:53:57,769 Unsubscribing from channel rq:pubsub:bc27952fbcbb4980b8a903e5eb055a45
+2024-01-29 14:54:02,292 Worker rq:worker:3ab87764f5134a03954a9407a14942fb started with PID 94807, version 1.15.1
+2024-01-29 14:54:02,292 Subscribing to channel rq:pubsub:3ab87764f5134a03954a9407a14942fb
+2024-01-29 14:54:02,293 *** Listening on workspaces-websites-frappe-bench:short, workspaces-websites-frappe-bench:default, workspaces-websites-frappe-bench:long...
+2024-01-29 14:54:02,294 Cleaning registries for queue: workspaces-websites-frappe-bench:short
+2024-01-29 14:54:02,295 Cleaning registries for queue: workspaces-websites-frappe-bench:default
+2024-01-29 14:54:02,296 Cleaning registries for queue: workspaces-websites-frappe-bench:long
